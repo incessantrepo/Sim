@@ -1,0 +1,7 @@
+DROP TABLE IF EXISTS `Kiran1`;
+create table `Kiran1`(
+  id INT NOT NULL AUTO_INCREMENT,
+   name VARCHAR(100) NOT NULL,
+   purpose VARCHAR(40) NOT NULL,
+   PRIMARY KEY ( id )
+);

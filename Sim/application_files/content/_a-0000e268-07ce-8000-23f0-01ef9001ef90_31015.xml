@@ -1,0 +1,114 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<contentHaul xmlns:a="http://www.appian.com/ae/types/2009">
+    <versionUuid>_a-0000e268-07ce-8000-23f0-01ef9001ef90_31028</versionUuid>
+    <rule>
+        <name>EAP_uiSectionCustomerInfo</name>
+        <uuid>_a-0000e268-07ce-8000-23f0-01ef9001ef90_31015</uuid>
+        <description></description>
+        <parentUuid>_a-0000e21d-e06a-8000-7d53-01ef9001ef90_48676</parentUuid>
+        <visibility>
+            <advertise>false</advertise>
+            <hierarchy>true</hierarchy>
+            <indexable>true</indexable>
+            <quota>false</quota>
+            <searchable>true</searchable>
+            <system>false</system>
+            <unlogged>false</unlogged>
+        </visibility>
+        <definition>load(
+  local!name,
+  local!address,
+  local!joiningDate,
+  local!purpose,
+  
+#"SYSTEM_SYSRULES_formLayout_v1"(
+  label:"Customer Details",
+  contents:{
+    #"SYSTEM_SYSRULES_columnsLayout"(
+      columns: {
+    #"SYSTEM_SYSRULES_columnLayout"(
+      contents:{
+        #"SYSTEM_SYSRULES_textField"(
+          label:"Name",
+          value:local!name,
+          saveInto: local!name,
+          validations: {
+            if(len(local!name)&gt;5,"Name should not be more than 5 characters",{})
+          }
+        ),
+        #"SYSTEM_SYSRULES_textField"(
+          label:"Address",
+          value:local!address,
+          saveInto: local!address
+        )
+      }
+    ),
+    #"SYSTEM_SYSRULES_columnLayout"(
+      contents:{
+        #"SYSTEM_SYSRULES_dateField"(
+          label:"JoiningDate",
+          value:local!joiningDate,
+          saveInto: local!joiningDate,
+          validations:if(
+            todate(local!joiningDate)&lt;today(),"Joining Date must be grater then today",{}
+          )
+        ),
+        #"SYSTEM_SYSRULES_textField"(
+          label:"Purpose",
+          value:local!purpose,
+          saveInto: local!purpose
+        )
+      }
+    )
+    }
+    )
+  },
+  buttons:#"SYSTEM_SYSRULES_ButtonLayout"(
+    primaryButtons:{
+      #"SYSTEM_SYSRULES_ButtonWidgetSubmit"(
+        label:"Submit"
+      )
+    },
+    secondaryButtons:{
+      #"SYSTEM_SYSRULES_ButtonWidgetSubmit"(
+        label:"Cancel"
+      )
+    }
+  )
+  
+)
+)</definition>
+        <metadataExpr></metadataExpr>
+        <preferredEditor>interface</preferredEditor>
+        <offlineEnabled>false</offlineEnabled>
+    </rule>
+    <roleMap public="true">
+        <role inherit="true" allowForAll="false" name="readers">
+            <users/>
+            <groups/>
+        </role>
+        <role inherit="true" allowForAll="false" name="authors">
+            <users/>
+            <groups/>
+        </role>
+        <role inherit="true" allowForAll="false" name="administrators">
+            <users/>
+            <groups/>
+        </role>
+        <role inherit="false" allowForAll="false" name="denyReaders">
+            <users/>
+            <groups/>
+        </role>
+        <role inherit="false" allowForAll="false" name="denyAuthors">
+            <users/>
+            <groups/>
+        </role>
+        <role inherit="false" allowForAll="false" name="denyAdministrators">
+            <users/>
+            <groups/>
+        </role>
+    </roleMap>
+    <history>
+        <historyInfo versionUuid="_a-0000e268-07ce-8000-23f0-01ef9001ef90_31028"/>
+    </history>
+</contentHaul>
