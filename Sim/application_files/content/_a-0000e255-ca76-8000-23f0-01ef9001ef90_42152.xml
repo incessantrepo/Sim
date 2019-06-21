@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8" standalone="yes"?>
 <contentHaul xmlns:a="http://www.appian.com/ae/types/2009">
-    <versionUuid>_a-0000e255-ca76-8000-23f0-01ef9001ef90_42161</versionUuid>
+    <versionUuid>_a-0000e255-ca76-8000-23f0-01ef9001ef90_42526</versionUuid>
     <rule>
         <name>EAP_NewInterface</name>
         <uuid>_a-0000e255-ca76-8000-23f0-01ef9001ef90_42152</uuid>
@@ -23,7 +23,7 @@
        * Since these usernames are fake, we're providing display names directly.        */
       {id: 1,  username: "karen.phillips",   displayName: "Karen Phillips",   conversion: round(rand() * 10, 1)},
       {id: 2,  username: "suzanne.fletcher", displayName: "Suzanne Fletcher", conversion: round(rand() * 10, 1)},
-      {id: 3,  username: "thomas.reed",      displayName: "Thomas Reed",      conversion: round(rand() * 10, 1)},
+      {id: 3,  username: "thomas.reeddcdcd",      displayName: "Thomas Reed",      conversion: round(rand() * 10, 1)},
       {id: 4,  username: "vincent.buchanan", displayName: "Vincent Buchanan", conversion: round(rand() * 10, 1)},
       {id: 5,  username: "oscar.kim",        displayName: "Oscar Kim",        conversion: round(rand() * 10, 1)},
       {id: 6,  username: "simone.ferguson",  displayName: "Simone Ferguson",  conversion: round(rand() * 10, 1)},
@@ -398,5 +398,6 @@
     </roleMap>
     <history>
         <historyInfo versionUuid="_a-0000e255-ca76-8000-23f0-01ef9001ef90_42161"/>
+        <historyInfo versionUuid="_a-0000e255-ca76-8000-23f0-01ef9001ef90_42526"/>
     </history>
 </contentHaul>
